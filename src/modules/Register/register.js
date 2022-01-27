@@ -3,49 +3,85 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Button from '../../components/button';
 import TextInputField from '../../components/textInput';
 import WithoutLoginContainer from '../../components/withLoginContainer';
-import colors from '../../styles/colors';
 import {screenName} from '../../constants/SCREEN_NAME';
 import {withoutLoginObject} from '../../constants/text';
+import colors from '../../styles/colors';
 
-const Login = props => {
+const Register = props => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [company, setCompany] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   return (
-    <WithoutLoginContainer type={withoutLoginObject.Login}>
+    <WithoutLoginContainer type={withoutLoginObject.Register}>
       <TextInputField
         value={username}
         style={styles.textInput}
         placeholder="Username"
-        isPassword={false}
         onChange={value => {
           setUsername(value);
         }}
+        isPassword={false}
+      />
+      <TextInputField
+        value={email}
+        style={styles.textInput}
+        placeholder="Email"
+        onChange={value => {
+          setEmail(value);
+        }}
+        isPassword={false}
+      />
+      <TextInputField
+        value={phone}
+        style={styles.textInput}
+        placeholder="Phone Number"
+        onChange={value => {
+          setPhone(value);
+        }}
+        isPassword={false}
+      />
+      <TextInputField
+        value={company}
+        style={styles.textInput}
+        placeholder="Company Name"
+        onChange={value => {
+          setCompany(value);
+        }}
+        isPassword={false}
       />
       <TextInputField
         value={password}
         style={styles.textInput}
         placeholder="Password"
-        isPassword={true}
         onChange={value => {
           setPassword(value);
         }}
+        isPassword={true}
+      />
+      <TextInputField
+        value={confirmPassword}
+        style={styles.textInput}
+        placeholder="Confirm Password"
+        onChange={value => {
+          setConfirmPassword(value);
+        }}
+        isPassword={true}
       />
       <View style={styles.buttonContainer}>
         <Button
           buttonText={styles.buttonText}
           button={styles.button}
-          label="Login"
+          label="Register"
         />
       </View>
       <View style={styles.textContainer}>
+        <Text style={styles.nonPrimaryText}>Already have an account?</Text>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate(screenName.FORGOT)}>
-          <Text style={styles.primaryText}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <Text style={styles.nonPrimaryText}>Do not have an account?</Text>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate(screenName.REGISTER)}>
-          <Text style={styles.primaryText}>Register</Text>
+          onPress={() => props.navigation.navigate(screenName.LOGIN)}>
+          <Text style={styles.primaryText}>Login</Text>
         </TouchableOpacity>
       </View>
     </WithoutLoginContainer>
@@ -91,4 +127,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Register;

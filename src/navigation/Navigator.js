@@ -6,6 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import colors from '../styles/colors';
 import SideMenu from '../components/SideMenu';
 import MainStackNavigationData from './MainStackNavigationData';
+import {screenName} from '../constants/SCREEN_NAME';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -13,7 +14,7 @@ const Drawer = createDrawerNavigator();
 function LoginStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName={screenName.LOGIN}
       screenOptions={{
         headerStyle: {
           backgroundColor: colors.primary,

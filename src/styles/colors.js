@@ -1,7 +1,9 @@
 const colorsScheme = {
-  primary: '#0053ae',
+  primary: '#7c5cc4',
   white: '#FFFFFF',
-  redPink: '#e0385a',
+  setupBackground: '#f5f5f5',
+  placeholderColor: '#aaa',
+  borderColor: '#eee',
 };
 
 export default colorsScheme;
