@@ -14,6 +14,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9A270DF6EED205DD3CE0481D /* libPods-erpmobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9474049323338566D9CDB5B6 /* libPods-erpmobile.a */; };
 		C580E4C986B57AA8E8867F72 /* libPods-erpmobile-erpmobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3189F0C96F99ADE09A25E5F4 /* libPods-erpmobile-erpmobileTests.a */; };
+		D990ECE527AED19B0024978C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = D990ECE427AED19B0024978C /* fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		9474049323338566D9CDB5B6 /* libPods-erpmobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-erpmobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E5D47C23B690BA72A23327 /* Pods-erpmobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erpmobile.release.xcconfig"; path = "Target Support Files/Pods-erpmobile/Pods-erpmobile.release.xcconfig"; sourceTree = "<group>"; };
 		A8F5093D37595AFD7866BA18 /* Pods-erpmobile-erpmobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erpmobile-erpmobileTests.release.xcconfig"; path = "Target Support Files/Pods-erpmobile-erpmobileTests/Pods-erpmobile-erpmobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		D990ECE427AED19B0024978C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../../../ermmobile/ios/fonts; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -114,7 +116,6 @@
 				5CEF1C6105E79DEBDF21326D /* Pods-erpmobile-erpmobileTests.debug.xcconfig */,
 				A8F5093D37595AFD7866BA18 /* Pods-erpmobile-erpmobileTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +129,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				D990ECE427AED19B0024978C /* fonts */,
 				13B07FAE1A68108700A75B9A /* erpmobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* erpmobileTests */,
@@ -243,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D990ECE527AED19B0024978C /* fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

@@ -1,11 +1,12 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
 const Button = props => {
   return (
-    <View onPress={props.onPress} style={props.button}>
+    <TouchableOpacity onPress={props.onPress} style={props.button}>
       <Text style={props.buttonText}>{props.label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

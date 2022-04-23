@@ -1,15 +1,25 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+/* eslint-disable prettier/prettier */
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Button from '../../components/button';
 import TextInputField from '../../components/textInput';
 import WithoutLoginContainer from '../../components/withLoginContainer';
 import colors from '../../styles/colors';
-import {screenName} from '../../constants/SCREEN_NAME';
-import {withoutLoginObject} from '../../constants/text';
+import { screenName } from '../../constants/SCREEN_NAME';
+import { withoutLoginObject } from '../../constants/text';
+import { loginUser } from './login.state';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 const Login = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const onLogin = async () => {
+    const obj = {};
+    obj.email = username;
+    obj.password = password;
+    props.loginUser(obj, props.navigation);
+  };
   return (
     <WithoutLoginContainer type={withoutLoginObject.Login}>
       <TextInputField
@@ -32,6 +42,8 @@ const Login = props => {
       />
       <View style={styles.buttonContainer}>
         <Button
+          onPress={onLogin}
+          // onPress={() => props.navigation.navigate('Dashboard')}
           buttonText={styles.buttonText}
           button={styles.button}
           label="Login"
@@ -91,4 +103,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default compose(
+  connect(
+    state => ({
+    }),
+    dispatch => ({
+      loginUser: (obj, navigation) => dispatch(loginUser(obj, navigation)),
+    }),
+  ),
+)(Login);
